@@ -1,0 +1,236 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+:root{
+    --title-font: "Poppins", sans-serif;
+
+    --dark-mode-bgcolor: #2C2A29;
+    --dark-mode-ftcolor: #000000;
+    --dark-mode-fgcolor: #D3D3D3;
+
+    --light-mode-bgcolor: #D3D3D3;
+    --light-mode-ftcolor: #A8A8A8;
+    --light-mode-fgcolor: #2C2A29;
+}
+body{
+    height: auto;
+    width:  100%;
+}
+/*header*/
+.header{
+    height: 80px;
+    width:  100%;
+    position: fixed;
+    background-color: var(--dark-mode-bgcolor);
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+#header-wrapper{
+    height: 100%;
+    width:  90%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+}
+#icon-wrapper{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 24px;
+}
+#title-icon{
+    height: 60px;
+    width: 60px;
+}
+#web-title{
+    font-size: 24px;
+    color: var(--dark-mode-fgcolor);
+    font-family: var(--title-font);
+    font-weight: bold;
+    margin-right: 12px;
+}
+#header-space{
+    flex: 1;
+}
+#top-nav{
+    font-size: 16px;
+    color: var(--dark-mode-fgcolor);
+    font-family: var(--title-font);
+    font-weight: normal;
+}
+#search-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-right: 12px;
+    gap: 12px;
+}
+#search-bar{
+    width: 240px;
+    padding: 8px;
+    border: none;
+    outline: none;
+    background-color: var(--dark-mode-fgcolor);
+    font-family: var(--title-font);
+    font-size: 12px;
+}
+#search-bar::-webkit-search-cancel-button{
+    display: none;
+}
+#search-btn{
+    color: var(--dark-mode-fgcolor);
+    cursor: pointer;
+}
+#account-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-right: 12px;
+    gap: 12px;
+}
+#create-account{
+    color: var(--dark-mode-bgcolor);
+    background-color: var(--dark-mode-fgcolor);
+    cursor: pointer;
+    font-family: var(--title-font);
+    font-size: 14px;
+    padding: 6px;
+    font-weight: 600;
+}
+/*content*/
+.content{
+    height: auto;
+    width:  100%;
+    margin-top: 80px;
+    background-color: var(--dark-mode-bgcolor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+#landing-poster{
+    height: 580px;
+    width: 100%;
+    cursor: pointer;
+}
+#landing-img{
+    height: 100%;
+    width: 100%;
+    box-shadow: inset 0px 0px 40px 40px rgb(0, 0, 0, 0.5);
+    filter: brightness(80%);
+    transition: 0.3s ease-in-out;
+}
+#poster-wrapper{
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 12px;
+}
+#poster-title{
+    font-family: var(--title-font);
+    font-size: 64px;
+    color: #FFFFFF;
+    text-shadow: 4px 4px #000000;
+}
+#poster-genre{
+    font-family: var(--title-font);
+    font-size: 16px;
+    color: #FFFFFF;
+    text-shadow: 2px 2px #000000;
+}
+#poster-about{
+    font-family: var(--title-font);
+    font-size: 16px;
+    color: #FFFFFF;
+    text-shadow: 2px 2px #000000;
+}
+#watch-poster{
+    background-color: #FFFFFF;
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#watch-poster i{
+    margin-right: 12px;
+    font-size: 24px;
+}
+#watch-poster h6{
+    font-family: var(--title-font);
+    font-size: 14px;
+    color: #000000;
+    font-weight: normal;
+}
+#landing-category{
+    height: auto;
+    width: 90%;
+    padding-block: 1%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+#anime-poster{
+    height: auto;
+    width: auto;
+    margin-block: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+#anime-img{
+    height: 320px;
+    width: 232px;
+}
+#anime-title{
+    font-family: var(--title-font);
+    color: var(--dark-mode-fgcolor);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px;
+}
+#anime-translate{
+    font-family: var(--title-font);
+    color: var(--dark-mode-fgcolor);
+    font-size: 12px;
+    font-weight: normal;
+    padding-inline: 12px;
+}
+/**/
+.footer{
+    height: 160px;
+    width:  100%;
+    background-color: var(--dark-mode-ftcolor);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
