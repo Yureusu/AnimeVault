@@ -49,14 +49,14 @@ const posters = ["assets/img/one-piece-poster.jpg", "assets/img/kimetsu-poster.j
     "assets/img/kenshin-poster.jpg"
 ];
 
-const postersTitle = ["One Piece Ep.1122", "Kimetsu No Yaiba Season 3", "My Hero Academia Season 7", "Dandadan", "Jujutsu Kaisen Season 2",
+const postersTitle = ["One Piece Ep.1122", "Kimetsu No Yaiba Season 3", "My Hero Academia Season 7", "Dandadan Season 1 Completed", "Jujutsu Kaisen Season 2",
     "Dr. Stone Season 4", "Bleach: Thousand-Year Blood War", "Re: Zero - Starting Life in Another World Season 3", " Solo Leveling Season 2",
     "Frieren: Beyond Journey's End", "The Apothecary Diaries Season 2", "Boruto: Naruto Next Generations Ep.293", "Dragon Ball Super Season 2 Ep.131",
     "Hunter x Hunter All Seasons", "Rurouni Kenshin: Kyoto Disturbance Ep.43"
 ];
 
 const posterTranslate = ["Subbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed",
-    "Subbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed",
+    "Subbed | Dubbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed",
     "Subbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed | Dubbed",
 
 ];
