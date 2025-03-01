@@ -42,11 +42,24 @@ setInterval(swapImage, 6000);
 swapImage();
 
 const posters = ["assets/img/one-piece-poster.jpg", "assets/img/kimetsu-poster.jpg", 
-    "assets/img/academia-poster.jpg", "assets/img/dandadan-poster.jpg", "assets/img/jujutsu-poster.jpg"];
+    "assets/img/academia-poster.jpg", "assets/img/dandadan-poster.jpg", "assets/img/jujutsu-poster.jpg",
+    "assets/img/dr-stone-poster.jpg", "assets/img/bleach-thousand-poster.jpg", "assets/img/re-zero-poster.jpg",
+    "assets/img/solo-leveling-poster.jpg", "assets/img/frieren-poster.jpg", "assets/img/apothecary-diaries-poster.jpg",
+    "assets/img/boruto-poster.jpg", "assets/img/dragon-ball-super-poster.jpg", "assets/img/hunter-hunter-poster.jpg",
+    "assets/img/kenshin-poster.jpg"
+];
 
-const postersTitle = ["One Piece", "Kimetsu No Yaiba", "My Hero Academia", "Dandadan", "Jujutsu Kaisen"];
+const postersTitle = ["One Piece Ep.1122", "Kimetsu No Yaiba Season 3", "My Hero Academia Season 7", "Dandadan", "Jujutsu Kaisen Season 2",
+    "Dr. Stone Season 4", "Bleach: Thousand-Year Blood War", "Re: Zero - Starting Life in Another World Season 3", " Solo Leveling Season 2",
+    "Frieren: Beyond Journey's End", "The Apothecary Diaries Season 2", "Boruto: Naruto Next Generations Ep.293", "Dragon Ball Super Season 2 Ep.131",
+    "Hunter x Hunter All Seasons", "Rurouni Kenshin: Kyoto Disturbance Ep.43"
+];
 
-const posterTranslate = ["Subbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed"];
+const posterTranslate = ["Subbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed",
+    "Subbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed",
+    "Subbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed | Dubbed",
+
+];
 
 const posterField = document.getElementById("landing-category");
 
