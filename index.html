@@ -14,15 +14,15 @@
 <body>
     <div class="header">
         <div id="header-wrapper">
-            <a href="" id="icon-wrapper" style="text-decoration: none;"><img id="title-icon" src="assets/img/web-icon.png" alt=""></a>
-            <a href="" id="web-title" style="text-decoration: none;">Anime Vault</a>
-            <a href="" id="top-nav" style="text-decoration: none;">Home</a>
-            <a href="" id="top-nav" style="text-decoration: none;">Discover</a>
+            <a href="index.html" id="icon-wrapper" style="text-decoration: none;"><img id="title-icon" src="assets/img/web-icon.png" alt=""></a>
+            <a href="index.html" id="web-title" style="text-decoration: none;">Anime Vault</a>
+            <a href="index.html" id="top-nav" style="text-decoration: none;">Home</a>
+            <a href="#landing-category" id="top-nav" style="text-decoration: none;">Discover</a>
             <a href="" id="top-nav" style="text-decoration: none;">Manga</a>
             <a href="" id="top-nav" style="text-decoration: none;">News</a>
             <div id="header-space"></div>
             <div id="search-wrapper">
-                <input id="search-bar" type="search" placeholder="Search">
+                <input id="search-bar" type="search" placeholder="Search Anime">
                 <i id="search-btn" class="fa-solid fa-magnifying-glass"></i>
             </div>
             <div id="account-wrapper">
@@ -30,7 +30,8 @@
             </div>
         </div>
     </div>
-    <div class="content">
+    <div class="content" id="content">
+        <!--Landing page-->
         <div id="landing-poster">
             <img id="landing-img" src="" alt="">
             <div id="poster-wrapper">
@@ -43,6 +44,25 @@
             </div>
         </div>
         <div id="landing-category"></div>
+        <!--Search result-->
+        <div id="search-result">
+            <div id="with-result">
+                <p id="withsearch-recall"></p> 
+                <img id="search-poster" src="" alt="">     
+                <div id="search-info">
+                    <p id="search-anime-name"></p>
+                    <p id="search-anime-trans"></p>
+                </div>
+                <p id="recommended-anime">Recommended for you:</p>     
+                <div id="recommended-field"></div>
+            </div>
+            <div id="no-result">
+                <p id="nosearch-recall"></p>
+                <div id="no-result-field"></div>
+                <p id="recommended-anime">Recommended for you:</p>     
+                <div id="recommended-field"></div>
+            </div>
+        </div>
     </div>
     <div class="footer">
         <div id="footer-wrapper">
@@ -58,7 +78,7 @@
             </div>
             <div id="footer-rights">
                 <p>Anime Vault does not store any files on our server, we only linked to the media which is hosted on 3rd party services.</p>
-                <p>© AnimeVault. All rights reserved.</p>
+                <p>© Anime Vault. All rights reserved.</p>
             </div>
         </div>
         <div id="social-wrapper">
