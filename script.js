@@ -157,6 +157,8 @@ function renderOnePiece(){
     document.getElementById("landing-category").style.display = "none";
     document.getElementById("one-piece-wrapper").style.display = "flex";
 
+    watchOnePiece();
+
     posters.splice(0, 1);
     postersTitle.splice(0, 1);
     posterTranslate.splice(0, 1);
@@ -175,6 +177,12 @@ function renderOnePiece(){
 
             epBox.appendChild(boxText)
             epList.appendChild(epBox);
+            epBox.addEventListener("click", () => {
+                alert("You clicked Episode " + i);
+                if(i == 1){
+                    location.reload();
+                }
+            });
         }
     }
 
@@ -201,7 +209,11 @@ function renderOnePiece(){
 
         onePieceRecommended.appendChild(poster);
     });
+}
 
+//watch one piece
+
+function watchOnePiece(){
     document.getElementById("watch-one-piece").addEventListener("click", () => {
         document.getElementById("one-piece-info").style.display = "none";
         document.getElementById("one-piece-episodes").style.display = "flex";
@@ -219,9 +231,11 @@ function renderOnePiece(){
                 if(i == 1){
                     epBox.style.backgroundColor = "tomato";
                 }
-    
                 epBox.appendChild(boxText)
                 epList.appendChild(epBox);
+                epBox.addEventListener("click", () => {
+                    alert("You clicked Episode " + i);
+                });
             }
         }
     });
