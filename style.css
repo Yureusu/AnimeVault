@@ -25,7 +25,7 @@ body{
     height: 80px;
     width:  100%;
     position: fixed;
-    background-color: var(--dark-mode-bgcolor);
+    background-color: var(--dark-mode-ftcolor);
     left: 0;
     top: 0;
     display: flex;
@@ -185,7 +185,7 @@ body{
     font-family: var(--title-font);
     font-size: 14px;
     color: #000000;
-    font-weight: normal;
+    font-weight: 600;
 }
 #landing-category{
     height: auto;
@@ -321,3 +321,86 @@ body{
     color: var(--dark-mode-fgcolor);
     cursor: pointer;
 }
+/*search result*/
+#search-result{
+    height: auto;
+    width: 100%;
+    display: none;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 24px;
+}
+#with-result{
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+#no-result{
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: 2px solid blue;
+}
+#withsearch-recall, #nosearch-recall, #recommended-anime, #no-recommended-anime{
+    color: var(--dark-mode-fgcolor);
+    font-family: var(--title-font);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+#search-poster{
+    height: 320px;
+    width: 232px;
+    cursor: pointer;
+    display: none;
+}
+#search-info{
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 232px;
+    flex: 1;
+    background-color: var(--dark-mode-ftcolor);
+    cursor: pointer;
+    margin-bottom: 24px;
+}
+#search-anime-name{
+    font-family: var(--title-font);
+    color: var(--dark-mode-fgcolor);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px;
+    cursor: pointer;
+}
+#search-anime-trans{
+    font-family: var(--title-font);
+    color: var(--dark-mode-fgcolor);
+    font-size: 12px;
+    font-weight: normal;
+    padding: 12px;
+    text-align: right;
+    cursor: pointer;
+}
+#recommended-field, #no-recommended-field{
+    height: auto;
+    width: 100%;
+    padding-block: 1%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+    
