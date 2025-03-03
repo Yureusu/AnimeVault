@@ -37,7 +37,7 @@ function renderHome(){
     
     }
     
-    setInterval(swapImage, 6000);
+    setInterval(swapImage, 5000);
     
     swapImage();
     
@@ -46,7 +46,7 @@ function renderHome(){
     document.getElementById("watch-poster").addEventListener("click", () => {  
         index = (index + 1) % landingPosters.length; 
         if (landingPosters[index] == "assets/img/onepiece-landing.png"){
-            alert("One Piece");
+            renderOnePiece();
         }
         else if (landingPosters[index] == "assets/img/kimetsu-landing.png"){
             alert("Kimetsu No Yaiba");
@@ -86,8 +86,9 @@ const postersTitle = ["One Piece", "Kimetsu No Yaiba", "My Hero Academia", "Dand
 const posterTranslate = ["Subbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed",
     "Subbed | Dubbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed",
     "Subbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed | Dubbed", "Subbed | Dubbed",
-
 ];
+
+//adding clicks
 
 //landing posters
 
@@ -115,7 +116,7 @@ function renderImages(){
 
         document.getElementById("anime-img").addEventListener("click", () => {
             if (src == "assets/img/one-piece-poster.jpg"){
-                onePiece();
+                renderOnePiece();
             }
         });
     });
@@ -132,7 +133,7 @@ function renderRecommended(){
 
         const image = document.createElement("img");
         image.src = src;
-        image.setAttribute("id", "anime-img")
+        image.setAttribute("id", "anime-img");
         poster.appendChild(image);
 
         const animeTitle = document.createElement("h4");
@@ -146,6 +147,83 @@ function renderRecommended(){
         poster.appendChild(animeTranslate);
 
         recommendedField.appendChild(poster);
+    });
+}
+
+//img listeners
+
+function renderOnePiece(){
+    document.getElementById("landing-poster").style.display = "none";
+    document.getElementById("landing-category").style.display = "none";
+    document.getElementById("one-piece-wrapper").style.display = "flex";
+
+    posters.splice(0, 1);
+    postersTitle.splice(0, 1);
+    posterTranslate.splice(0, 1);
+    renderRecommended();
+
+    renderOnePieceEps();
+    function renderOnePieceEps(){
+        const epList = document.getElementById("episode-list");
+        const epCount = 20;
+
+        for (let i = 1; i <= epCount; i++){
+            const epBox = document.createElement("div");
+            const boxText = document.createElement("h6");
+            epBox.setAttribute("id", "episode-box");
+            boxText.textContent = "Ep. " + i;
+
+            epBox.appendChild(boxText)
+            epList.appendChild(epBox);
+        }
+    }
+
+    posters.forEach((src, index) => {
+        const onePieceRecommended = document.getElementById("one-piece-recommended");
+
+        const poster = document.createElement("span");
+        poster.setAttribute("id", "anime-poster");
+
+        const image = document.createElement("img");
+        image.src = src;
+        image.setAttribute("id", "anime-img");
+        poster.appendChild(image);
+
+        const animeTitle = document.createElement("h4");
+        animeTitle.textContent = postersTitle[index];
+        animeTitle.setAttribute("id", "anime-title");
+        poster.appendChild(animeTitle);
+
+        const animeTranslate = document.createElement("h6");
+        animeTranslate.textContent = posterTranslate[index];
+        animeTranslate.setAttribute("id", "anime-translate");
+        poster.appendChild(animeTranslate);
+
+        onePieceRecommended.appendChild(poster);
+    });
+
+    document.getElementById("watch-one-piece").addEventListener("click", () => {
+        document.getElementById("one-piece-info").style.display = "none";
+        document.getElementById("one-piece-episodes").style.display = "flex";
+        renderOnePieceEps();
+        
+        function renderOnePieceEps(){
+            const epList = document.getElementById("player-episode-list");
+            const epCount = 20;
+    
+            for (let i = 1; i <= epCount; i++){
+                const epBox = document.createElement("div");
+                const boxText = document.createElement("h6");
+                epBox.setAttribute("id", "episode-box");
+                boxText.textContent = "Ep. " + i;
+                if(i == 1){
+                    epBox.style.backgroundColor = "tomato";
+                }
+    
+                epBox.appendChild(boxText)
+                epList.appendChild(epBox);
+            }
+        }
     });
 }
 
@@ -164,12 +242,12 @@ searchBtn.addEventListener("keydown", function(event){
 function searchResult(){
     document.getElementById("landing-poster").style.display = "none";
     document.getElementById("landing-category").style.display = "none";
+    document.getElementById("one-piece-wrapper").style.display = "none";
     document.getElementById("search-result").style.display = "flex";
 
     const searchValue = document.getElementById("search-bar").value;
 
     const searchRecall = document.getElementById("withsearch-recall");
-    const noSearchRecall = document.getElementById("nosearch-recall");
 
     const searchPoster = document.getElementById("search-poster");
     const searchAnimeName = document.getElementById("search-anime-name");
@@ -192,15 +270,20 @@ function searchResult(){
             searchAnimeTrans.textContent = posterTranslate[0];
 
             document.getElementById("search-poster").style.display = "block";
+
             document.getElementById("search-info").style.display = "flex";
 
             posters.splice(0, 1);
             postersTitle.splice(0, 1);
             posterTranslate.splice(0, 1);
-            console.log(posters);
-            console.log(postersTitle);
-            console.log(posterTranslate);
             renderRecommended();
+
+            document.getElementById("search-poster").addEventListener("click", () => {
+                document.getElementById("search-result").style.display = "none";
+                document.getElementById("with-result").style.display = "none";
+                document.getElementById("search-info").style.display = "none";
+                renderOnePiece();
+            });
         break;
         case(kimetsuKey.some(word => searchValue.includes(word))):
             document.getElementById("with-result").style.display = "flex";
@@ -217,9 +300,6 @@ function searchResult(){
             posters.splice(1, 1);
             postersTitle.splice(1, 1);
             posterTranslate.splice(1, 1);
-            console.log(posters);
-            console.log(postersTitle);
-            console.log(posterTranslate);
             renderRecommended();
         break;
         case(heroAcademiaKey.some(word => searchValue.includes(word))):
@@ -237,9 +317,6 @@ function searchResult(){
             posters.splice(2, 1);
             postersTitle.splice(2, 1);
             posterTranslate.splice(2, 1);
-            console.log(posters);
-            console.log(postersTitle);
-            console.log(posterTranslate);
             renderRecommended();
         break;
         case(dandadanKey.some(word => searchValue.includes(word))):
@@ -257,9 +334,6 @@ function searchResult(){
             posters.splice(3, 1);
             postersTitle.splice(3, 1);
             posterTranslate.splice(3, 1);
-            console.log(posters);
-            console.log(postersTitle);
-            console.log(posterTranslate);
             renderRecommended();
         break;
         case(jujutsuKey.some(word => searchValue.includes(word))):
@@ -277,9 +351,6 @@ function searchResult(){
             posters.splice(4, 1);
             postersTitle.splice(4, 1);
             posterTranslate.splice(4, 1);
-            console.log(posters);
-            console.log(postersTitle);
-            console.log(posterTranslate);
             renderRecommended();
         break;
         case(drStoneKey.some(word => searchValue.includes(word))):
@@ -297,9 +368,6 @@ function searchResult(){
             posters.splice(5, 1);
             postersTitle.splice(5, 1);
             posterTranslate.splice(5, 1);
-            console.log(posters);
-            console.log(postersTitle);
-            console.log(posterTranslate);
             renderRecommended();
         break;
         case(bleachKey.some(word => searchValue.includes(word))):
@@ -317,9 +385,6 @@ function searchResult(){
             posters.splice(6, 1);
             postersTitle.splice(6, 1);
             posterTranslate.splice(6, 1);
-            console.log(posters);
-            console.log(postersTitle);
-            console.log(posterTranslate);
             renderRecommended();
         break;
         case(reZeroKey.some(word => searchValue.includes(word))):
@@ -337,9 +402,6 @@ function searchResult(){
             posters.splice(7, 1);
             postersTitle.splice(7, 1);
             posterTranslate.splice(7, 1);
-            console.log(posters);
-            console.log(postersTitle);
-            console.log(posterTranslate);
             renderRecommended();
         break;
         case(soloLevelingKey.some(word => searchValue.includes(word))):
@@ -357,9 +419,6 @@ function searchResult(){
             posters.splice(8, 1);
             postersTitle.splice(8, 1);
             posterTranslate.splice(8, 1);
-            console.log(posters);
-            console.log(postersTitle);
-            console.log(posterTranslate);
             renderRecommended();
         break;
         case(frierenKey.some(word => searchValue.includes(word))):
@@ -377,9 +436,6 @@ function searchResult(){
             posters.splice(9, 1);
             postersTitle.splice(9, 1);
             posterTranslate.splice(9, 1);
-            console.log(posters);
-            console.log(postersTitle);
-            console.log(posterTranslate);
             renderRecommended();
         break;
         case(apothecaryKey.some(word => searchValue.includes(word))):
@@ -396,10 +452,6 @@ function searchResult(){
 
             posters.splice(10, 1);
             postersTitle.splice(10, 1);
-            posterTranslate.splice(10, 1);
-            console.log(posters);
-            console.log(postersTitle);
-            console.log(posterTranslate);
             renderRecommended();
         break;
         case(borutoKey.some(word => searchValue.includes(word))):
@@ -417,9 +469,6 @@ function searchResult(){
             posters.splice(11, 1);
             postersTitle.splice(11, 1);
             posterTranslate.splice(11, 1);
-            console.log(posters);
-            console.log(postersTitle);
-            console.log(posterTranslate);
             renderRecommended();
         break;
         case(dragonBallKey.some(word => searchValue.includes(word))):
@@ -437,9 +486,6 @@ function searchResult(){
             posters.splice(12, 1);
             postersTitle.splice(12, 1);
             posterTranslate.splice(12, 1);
-            console.log(posters);
-            console.log(postersTitle);
-            console.log(posterTranslate);
             renderRecommended();
         break;
         case(hunterHunterKey.some(word => searchValue.includes(word))):
@@ -457,9 +503,6 @@ function searchResult(){
             posters.splice(13, 1);
             postersTitle.splice(13, 1);
             posterTranslate.splice(13, 1);
-            console.log(posters);
-            console.log(postersTitle);
-            console.log(posterTranslate);
             renderRecommended();
         break;
         case(samuraiXKey.some(word => searchValue.includes(word))):
@@ -477,9 +520,6 @@ function searchResult(){
             posters.splice(14, 1);
             postersTitle.splice(14, 1);
             posterTranslate.splice(14, 1);
-            console.log(posters);
-            console.log(postersTitle);
-            console.log(posterTranslate);
             renderRecommended();
         break;
         default: 
@@ -491,4 +531,5 @@ function searchResult(){
         break;
     }
 }
+
 

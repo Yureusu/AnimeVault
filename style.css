@@ -391,7 +391,7 @@ body{
     text-align: right;
     cursor: pointer;
 }
-#recommended-field, #no-recommended-field{
+#recommended-field{
     height: auto;
     width: 100%;
     padding-block: 1%;
@@ -402,5 +402,189 @@ body{
     flex-wrap: wrap;
     gap: 12px;
 }
-
-    
+/*one piece*/
+#one-piece-wrapper{
+    height: auto;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 24px;
+}
+#one-piece-info{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 24px;
+    padding: 24px;
+    border-bottom: 1px solid var(--dark-mode-fgcolor);
+    margin-bottom: 12px;
+}
+#one-piece-recommended{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: -24px;
+    margin-left: 24px;
+}
+#one-piece-about{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+#one-piece-about p, #one-piece-about h4, #one-piece-episodes p{
+    font-size: 14px;
+    font-family: var(--title-font);
+    color: var(--dark-mode-fgcolor);
+    font-weight: normal;
+}
+#one-piece-about h1{
+    font-size: 24px;
+    font-family: var(--title-font);
+    color: var(--dark-mode-fgcolor);
+}
+#one-piece-about span{
+    background-color: var(--dark-mode-fgcolor);
+    color: var(--dark-mode-bgcolor);
+    padding-block: 12px;
+    padding-inline: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    font-size: 18px;
+    font-family: var(--title-font);
+    cursor: pointer;
+    border-radius: 24px;
+}
+#one-piece-about span:hover{
+    filter: brightness(80%);
+    transition: 0.3s ease-in-out;
+}
+#one-piece-more{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+}
+#episode-list{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+#episode-box{
+    height: auto;
+    width: 80px;
+    background-color: var(--dark-mode-fgcolor); 
+    color: var(--dark-mode-bgcolor);
+    padding: 12px;
+    border-radius: none;
+    outline: none;
+    cursor: pointer;
+}
+#episode-box:hover{
+    filter: brightness(80%);
+    transition: 0.3s ease-in-out;
+}
+#episode-box h6{
+    font-size: 12px;
+    font-family: var(--title-font);
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+}
+#one-piece-episodes{
+    height: auto;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+#episode-wrapper{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    background-color: var(--dark-mode-ftcolor);
+}
+#one-piece-player{
+    flex: 3;
+}
+#player-episode-wrapper{
+    height: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-left: 24px;
+    margin-top: 12px;
+    justify-content: center;
+    border-left: 1px solid var(--dark-mode-fgcolor);
+}
+#player-episode-list{
+    height: 174px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-block: 12px;
+    padding-left: 12px;
+    overflow-y: scroll;
+    border: 1px solid var(--dark-mode-fgcolor);
+}
+#current-episode{
+    font-size: 24px;
+    font-family: var(--title-font);
+    color: var(--dark-mode-fgcolor);
+    font-weight: normal;
+    width: 100%;
+}
+#current-anime{
+    height: 240px;
+    width: 180px;
+}
+#episode-list-title{
+    width: 100%;
+    font-size: 14px;
+    font-family: var(--title-font);
+    color: var(--dark-mode-fgcolor);
+    font-weight: normal;
+    margin-block: 12px;
+}
